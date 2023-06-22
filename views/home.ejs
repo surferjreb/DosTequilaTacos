@@ -1,0 +1,76 @@
+<%- include('partials/head') %>
+    <div class="container-fluid text-center">
+        <%- include('partials/titleHeader') %>
+            <div class="row justify-content-center">
+                <%- include('partials/taco_toppings') %>
+            </div>
+        <div class="row justify-content-center">
+            <div class="col">
+                <p class="display-4 border border-3 border-dark rounded-3 bg-info">Order Here</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-4 ">
+                <form class="border border-2 border-dark" action="/tacoOrder" method="post">
+                    <div class="row m-2">
+                        <label class="form-label col text-start" for="tacoMeat">Meat</label>
+                        <input class="form-control col" type="text" name="meat" id="tacoMeat">
+                    </div>
+                    <div class="row m-2 border border-2 border-dark rounded">
+                        <p class="display-6">Veggies</p>
+                        <div class="input-group mt-1 grid gap-1 column-gap-4 " >
+                            <% for(let veg of veggies) { %>
+                                <div class="p-2 g-col-6">
+                                    <input class="form-check-input" type="checkbox" name="veggies" value="<%= veg %>">
+                                    <label class="form-label" for="<%= veg %>" ><%= veg %></label>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="row m-2 border border-2 border-dark rounded">
+                        <p class="display-6">Sauce</p>
+                        <div class="input-group mt-1 grid gap-1 column-gap-4 " >
+                            <% for(let sauce of sauces) { %>
+                                <div class="p-2 g-col-6">
+                                    <input class="form-check-input" type="radio" name="sauce" value="<%= sauce %>">
+                                    <label class="form-label" for="<%= sauce %>" ><%= sauce %></label>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="row m-2">
+                        <label class="form-label col text-start" for="qty">Quantity</label>
+                        <input class="form-control col" type="text" name="qty" id="qty">
+                    </div>
+                    <div class="row m-2">
+                        <div class="col text-end">
+                            <button class="btn btn-md btn-dark" id="submit">Add to Cart</button>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="/tacoOrder">
+                   
+                    <p class="btn btn-md btn-dark"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
+                        <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
+                      </svg> Cart</p>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="comments">
+                    <p class="btn btn-lg btn-dark ">View Comments</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,43 @@
+<div class="col-sm-4">
+    <table class="table table-dark table-responsive-sm">
+        <thead>
+            <th>Meats</th>
+        </thead>
+        <tbody>
+            <% for(meat of meats) { %>
+                <tr>
+                    <td><%= meat %></td>
+                </tr>
+            <% } %>
+            
+        </tbody>
+    </table>
+</div>
+<div class="col-sm-4">
+    <table class="table table-dark table-stripped-rows">
+        <thead>
+            <th>Veggies</th>
+        </thead>
+        <tbody>
+            <% for(veg of veggies) { %>
+                <tr>
+                    <td><%= veg %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+<div class="col-sm-4">
+    <table class="table table-dark table-stripped-rows">
+        <thead>
+            <th>Sauces</th>
+        </thead>
+        <tbody>
+            <% for(sauce of sauces) { %>
+                <tr>
+                    <td><%= sauce %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>

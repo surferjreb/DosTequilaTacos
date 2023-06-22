@@ -1,0 +1,33 @@
+<%- include('partials/head') %>
+    <div class="container-fluid">
+        <%- include('partials/titleHeader') %>
+        <% for(comment of comments) { %>
+            <div class="row justify-content-center">
+                    <div class="card m-3" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">User: <%= comment.username %></h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Id: <%= comment.id %></h6>
+                            <p class="card-text ">
+                                <%if(comment.cBody.length > 30) { %>
+                                    <%= comment.cBody.substring(0, 30) %>...
+                                <% } else { %>
+                                    <%= comment.cBody %>
+                                <% } %></p>
+                            <a href="/comments/<%= comment.id %>" class="card-link">Edit</a>
+                            
+                        </div>
+                    </div>
+            </div>
+        <% } %>
+        <div class="row justify-content-start">
+            <div class="col-sm-1">
+                <a href="/" class="btn btn-lg btn-dark">Home</a>
+            </div>
+            <div class="col">
+                <a href="/newComment" class="btn btn-lg btn-dark">Add a new Comment</a>
+            </div>
+        </div>
+    </div>    
+
+
+<%- include('partials/footer') %>

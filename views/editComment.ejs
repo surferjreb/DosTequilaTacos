@@ -1,0 +1,21 @@
+<%- include('partials/head') %>
+    <div class="container-fluid">
+        <%- include('partials/titleHeader') %>
+        <div class="row justify-content-center" >
+            <div class="col text-center">
+                <form method="post" action="/comments/<%= comment.id %>?_method=PATCH">
+                    <div class="col">
+                        <textarea name="cBody" id="commentBody" cols="30" rows="10">
+                            <%= comment.cBody %>
+                        </textarea>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-sm btn-dark">Update</button>
+                    </div>
+                </form>
+                <a href="/comments/<%= comment.id %>" class="btn btn-sm btn-dark">Cancel</a>
+            </div>
+        </div>
+        
+    </div>
+<%- include('partials/footer') %>

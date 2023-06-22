@@ -1,0 +1,26 @@
+<%- include('partials/head') %>
+    <div class="container-fluid">
+        <%- include('partials/titleHeader') %>
+        <div class="row justify-content-center">
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title mb-2">User: <%= comment.username %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Id: <%= comment.id %></h6>
+                    <p class="card-text ">
+                            <%= comment.cBody %>
+                    </p>
+                    <a href="/comments" class="card-link">Back to Comments</a>
+                    <a href="/comments/<%= comment.id %>/edit" class="card-link">Update</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <form method="post" action="/comments/<%= comment.id %>?_method=DELETE">
+                    <button class="btn btn-sm btn-dark">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<%- include('partials/footer') %>

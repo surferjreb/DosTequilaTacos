@@ -1,0 +1,27 @@
+{
+    "meats": [
+        "beef",
+        "chicken", 
+        "pork",
+        "None..."
+    ],
+    "veggies": [
+        "lettuce",
+        "green peppers",
+        "banana peppers",
+        "onions",
+        "red onions",
+        "corn",
+        "black olives",
+        "jalapenos", 
+        "tomatoes"
+
+    ],
+    "sauces": [
+        "None",
+        "Easy Going...",
+        "Midnight Cruise",
+        "Speedin",
+        "Joy Ride!"
+    ]
+}

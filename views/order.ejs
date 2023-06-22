@@ -1,0 +1,40 @@
+<%- include('partials/head') %>
+    <div class="container-fluid">
+        <%- include('partials/titleHeader') %>
+        <div class="row">
+            <div class="col">
+                <table class="table table-sm table-dark text-white">
+                    <thead>
+                        <tr>
+                            <th>Meat</th>
+                            <th>Veggies</th>
+                            <th>Sauce</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let order of orders) { %>
+                            <tr>
+                                <td><%= order.meat %></td>
+                                <td>
+                                    <% for(let veg of order.veggies) { %>
+                                            <%= veg %>,
+                                    <% } %> 
+                                </td>
+                                <td><%= order.sauce%></td>
+                                <td><%= order.qty%></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="/">Continue Ordering</a>
+            </div>
+        </div>
+    </div>    
+
+        
+<%- include('partials/footer')%>
